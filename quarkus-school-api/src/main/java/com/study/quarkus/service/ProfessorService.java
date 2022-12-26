@@ -24,7 +24,7 @@ public class ProfessorService {
     public List<ProfessorResponse> retrieveAll() {
         log.info("Listing professors");
         final List<Professor> listOfProfessors = repository.listAll();
-        return  mapper.toResponse(listOfProfessors);
+        return mapper.toResponse(listOfProfessors);
     }
 
     public ProfessorResponse getById(int id) {
@@ -39,8 +39,7 @@ public class ProfessorService {
 
         log.info("Saving professor - {}", professorRequest);
 
-        Professor entity =
-                Professor.builder()
+        Professor entity = Professor.builder()
                 .name(professorRequest.getName())
                 .build();
 
