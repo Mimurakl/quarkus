@@ -39,4 +39,5 @@ nb-configuration.xml
 # Local environment
 .env
 
-/application.properties
+
+quarkus-school-api/src/main/resources/application.properties
