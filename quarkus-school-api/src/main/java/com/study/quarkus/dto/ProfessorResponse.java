@@ -1,4 +1,4 @@
-package com.study.dto;
+package com.study.quarkus.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -11,10 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties
-public class CorDto {
+public class ProfessorResponse {
 
     private int id;
-
-    private String descricao;
-
+    private String name;
 }

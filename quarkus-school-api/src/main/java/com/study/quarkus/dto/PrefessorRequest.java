@@ -1,4 +1,4 @@
-package com.study.spring.dto;
+package com.study.quarkus.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties
-public class ProfessorDto {
+public class ProfessorRequest {
 
-    private int id;
     private String name;
+
 }
