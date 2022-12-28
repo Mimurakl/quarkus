@@ -1,6 +1,8 @@
 package com.study.quarkus;
 
 import com.study.quarkus.dto.ErrorMessage;
+import com.study.quarkus.exception.NotAllowedNameException;
+import com.study.quarkus.exception.InvalidStateException;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.EntityNotFoundException;
@@ -24,6 +26,25 @@ public class SchoolExceptionHandler implements ExceptionMapper<Exception> {
                             .build())
                     .build();
         }
+        if (exception instanceof InvalidStateException) {
+            return Response
+                    .status(Response.Status.CONFLICT)
+                    .entity(ErrorMessage.builder()
+                            .message(exception.getMessage())
+                            .build())
+                    .build();
+        }
+
+        if (exception instanceof NotAllowedNameException) {
+            return Response
+                    .status(422)
+                    .entity(ErrorMessage.builder()
+                            .message(exception.getMessage())
+                            .build())
+                    .build();
+        }
+
+
         return Response
                 .status(Response.Status.INTERNAL_SERVER_ERROR)
                 .entity(ErrorMessage.builder()

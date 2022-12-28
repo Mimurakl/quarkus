@@ -13,9 +13,8 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties
-public class ProfessorRequest {
+public class DisciplinaRequest {
 
     @NotBlank(message = "Name must be not empty or null")
     private String name;
-
 }
