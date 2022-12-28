@@ -29,7 +29,7 @@ public class Disciplina {
     @Column(name="data_atualizacao", nullable = false)
     private LocalDateTime dateTime;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "titular", unique = true)
     private Professor titular;
 
